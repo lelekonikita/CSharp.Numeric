@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>/Users/leleko_nikita/Projects/Leleko.CSharp.Numeric/Release/Leleko.CSharp.Numeric</name>
+    </assembly>
+    <members>
+        <member name="T:Leleko.CSharp.ParseFunc`1">
+            <summary>
+            delegate for purser
+            </summary>
+            <typeparam name="TOutput">extracting type</typeparam>
+            <param name="s">expression</param>
+            <param name="index">start index</param>
+            <param name="value">result</param>
+            <returns>success or not</returns>©©©©</member>
+        <member name="T:Leleko.CSharp.NumericParser">
+            <summary>
+            parse provider for numbers types
+            </summary>
+        </member>
+        <member name="T:Leleko.CSharp.NumericParser.NumberSeparator">
+            <summary>
+            separators of decimal part
+            </summary>
+        </member>
+        <member name="F:Leleko.CSharp.NumericParser.NumberSeparator.None">
+            <summary>
+            разделители недопускаются
+            </summary>
+        </member>
+        <member name="F:Leleko.CSharp.NumericParser.NumberSeparator.Point">
+            <summary>
+            '.'
+            </summary>
+        </member>
+        <member name="F:Leleko.CSharp.NumericParser.NumberSeparator.Comma">
+            <summary>
+            ','
+            </summary>
+        </member>
+        <member name="F:Leleko.CSharp.NumericParser.NumberSeparator.All">
+            <summary>
+            {',';'.'}
+            </summary>
+        </member>
+        <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Int32@,System.Boolean@)">
+            <summary>
+            extract {bool} variable from string with index
+            </summary>
+            <param name="s">expression</param>
+            <param name="index">start index</param>
+            <param name="value">result</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Boolean@)">
+            <summary>
+            convert string to {bool} variable
+            </summary>
+            <param name="s">expression</param>
+            <param name="value">result</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Int32@,System.Int32@)">
+            <summary>
+            extract {int} variable from string with index
+            </summary>
+            <param name="s">expression</param>
+            <param name="index">start index</param>
+            <param name="value">result</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Int32@)">
+            <summary>
+            convert string to {int} variable
+            </summary>
+            <param name="s">expression</param>
+            <param name="value">result</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Int32@,System.Int64@)">
+            <summary>
+            extract {int} variable from string with index
+            </summary>
+            <param name="s">expression</param>
+            <param name="index">start index</param>
+            <param name="value">result</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Int64@)">
+            <summary>
+            convert string to {int} variable
+            </summary>
+            <param name="s">expression</param>
+            <param name="value">result</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Int32@,System.Double@,Leleko.CSharp.NumericParser.NumberSeparator)">
+            <summary>
+            extract {long} variable from string with index
+            </summary>
+            <param name="s">expression</param>
+            <param name="index">start index</param>
+            <param name="value">result</param>
+            <param name="numberSeparator">separator of decimal</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Double@,Leleko.CSharp.NumericParser.NumberSeparator)">
+            <summary>
+            convert string to {long} variable
+            </summary>
+            <param name="s">expression</param>
+            <param name="value">result</param>
+            <param name="numberSeparator">separator of decimal</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="T:Leleko.CSharp.CollectionParser">
+            <summary>
+            parse provider for array and collection
+            </summary>
+        </member>
+        <member name="M:Leleko.CSharp.CollectionParser.TryParse``1(System.String,System.Int32@,System.Char,Leleko.CSharp.ParseFunc{``0},System.Int32@,System.Collections.Generic.ICollection{``0})">
+            <summary>
+            extract {collection[TOutput]} from string with index
+            </summary>
+            <typeparam name="TOutput">
+            </typeparam>
+            <param name="s">expression</param>
+            <param name="index">start index</param>
+            <param name="separator">separator of elements in collection</param>
+            <param name="parseElementFn">fuction for pursing elements in [Touput]</param>
+            <param name="elementsCount">number of elements was resulted</param>
+            <param name="outCollection">collection who added resulted elements</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.CollectionParser.TryParse``1(System.String,System.Char,Leleko.CSharp.ParseFunc{``0},System.Int32@,System.Collections.Generic.ICollection{``0})">
+            <summary>
+            extract {collection[TOutput]} from string
+            </summary>
+            <typeparam name="TOutput">
+            </typeparam>
+            <param name="s">expression</param>
+            <param name="separator">separator of elements in collection</param>
+            <param name="parseElementFn">fuction for pursing elements in [Touput]</param>
+            <param name="elementsCount">number of elements was resulted</param>
+            <param name="outCollection">collection who added resulted elements</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.CollectionParser.TryParse``1(System.String,System.Int32@,System.String,Leleko.CSharp.ParseFunc{``0},System.Int32@,System.Collections.Generic.ICollection{``0})">
+            <summary>
+            extract {collection[TOutput]} from string with index
+            </summary>
+            <typeparam name="TOutput">
+            </typeparam>
+            <param name="s">expression</param>
+            <param name="index">start index</param>
+            <param name="separator">separator of elements in collection</param>
+            <param name="parseElementFn">fuction for pursing elements in [Touput]</param>
+            <param name="elementsCount">number of elements was resulted</param>
+            <param name="outCollection">collection who added resulted elements</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.CollectionParser.TryParse``1(System.String,System.String,Leleko.CSharp.ParseFunc{``0},System.Int32@,System.Collections.Generic.ICollection{``0})">
+            <summary>
+            extract {collection[TOutput]} from string with index
+            </summary>
+            <typeparam name="TOutput">
+            </typeparam>
+            <param name="s">expression</param>
+            <param name="separator">separator of elements in collection</param>
+            <param name="parseElementFn">fuction for pursing elements in [Touput]</param>
+            <param name="elementsCount">number of elements was resulted</param>
+            <param name="outCollection">collection who added resulted elements</param>
+            <returns>success or not</returns>
+        </member>
+    </members>
+</doc>

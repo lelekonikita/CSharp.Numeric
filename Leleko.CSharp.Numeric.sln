@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leleko.CSharp.Numeric", "Leleko.CSharp.Numeric\Leleko.CSharp.Numeric.csproj", "{68D029B4-0484-4B75-A7AD-D03AB79D670D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leleko.CSharp.Numeric.Compact", "Leleko.CSharp.Numeric.Compact\Leleko.CSharp.Numeric.Compact.csproj", "{D35430FE-B67A-4759-8C93-67CA0896F504}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTest", "UTest\UTest.csproj", "{952D9301-FC07-415D-93FD-F0D68A476E46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68D029B4-0484-4B75-A7AD-D03AB79D670D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D029B4-0484-4B75-A7AD-D03AB79D670D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D029B4-0484-4B75-A7AD-D03AB79D670D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D029B4-0484-4B75-A7AD-D03AB79D670D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{952D9301-FC07-415D-93FD-F0D68A476E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952D9301-FC07-415D-93FD-F0D68A476E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952D9301-FC07-415D-93FD-F0D68A476E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952D9301-FC07-415D-93FD-F0D68A476E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35430FE-B67A-4759-8C93-67CA0896F504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35430FE-B67A-4759-8C93-67CA0896F504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35430FE-B67A-4759-8C93-67CA0896F504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35430FE-B67A-4759-8C93-67CA0896F504}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = UTest\UTest.csproj
+	EndGlobalSection
+EndGlobal
