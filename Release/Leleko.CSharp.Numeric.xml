@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>/Users/leleko_nikita/Projects/Leleko.CSharp.Numeric/Release/Leleko.CSharp.Numeric</name>
+        <name>Leleko.CSharp.Numeric</name>
     </assembly>
     <members>
         <member name="T:Leleko.CSharp.ParseFunc`1">
@@ -79,7 +79,7 @@
         </member>
         <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Int32@,System.Int64@)">
             <summary>
-            extract {int} variable from string with index
+            extract {long} variable from string with index
             </summary>
             <param name="s">expression</param>
             <param name="index">start index</param>
@@ -88,7 +88,7 @@
         </member>
         <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Int64@)">
             <summary>
-            convert string to {int} variable
+            convert string to {long} variable
             </summary>
             <param name="s">expression</param>
             <param name="value">result</param>
@@ -111,6 +111,23 @@
             <param name="s">expression</param>
             <param name="value">result</param>
             <param name="numberSeparator">separator of decimal</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.Int32@,System.TimeSpan@)">
+            <summary>
+            convert string to {TimeSpan} variable
+            </summary>
+            <param name="s">expression in standart format {dd.hh:mm:ss.ffff}</param>
+            <param name="index">start index</param>
+            <param name="value">result</param>
+            <returns>success or not</returns>
+        </member>
+        <member name="M:Leleko.CSharp.NumericParser.TryParse(System.String,System.TimeSpan@)">
+            <summary>
+            convert string to {TimeSpan} variable
+            </summary>
+            <param name="s">expression in standart format {dd.hh:mm:ss.ffff}</param>
+            <param name="value">result</param>
             <returns>success or not</returns>
         </member>
         <member name="T:Leleko.CSharp.CollectionParser">

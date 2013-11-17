@@ -267,6 +267,22 @@ namespace UTest
 			}
 		}
 	}
+
+	public class UTestNumericParserOfTimeSpan: UTest_NumericParser<TimeSpan>
+	{
+		public override IEnumerable<ITestCaseData> Source_TryParse
+		{
+			get
+			{
+				yield return new TestCaseData(true, "11.12:13:14.15", new TimeSpan(11,12,13,14,15));
+				yield return new TestCaseData(true, "11.12:13:14", new TimeSpan(11,12,13,14));
+				yield return new TestCaseData(true, "12:13:14", new TimeSpan(12,13,14));
+				yield return new TestCaseData(true, TimeSpan.MinValue.ToString(), TimeSpan.MinValue); 
+				yield return new TestCaseData(true, TimeSpan.MaxValue.ToString(), TimeSpan.MaxValue);
+				yield return new TestCaseData(true, "12345678", new TimeSpan(12345678));
+			}
+		}
+	}
 	
 	public abstract class UTest_CollectionParser<T>: UTest_Parser<T>
 	{

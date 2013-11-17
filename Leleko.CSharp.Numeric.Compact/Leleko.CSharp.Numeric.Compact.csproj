@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Leleko.CSharp.Numeric.Compact</RootNamespace>
     <AssemblyName>Leleko.CSharp.Numeric.Compact</AssemblyName>
-    <TargetFrameworkProfile>Profile1</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile3</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -34,8 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\Numeric.Compact.AssemblyInfo.cs" />
-    <Compile Include="..\Leleko.CSharp.Numeric\Numeric.cs">
-      <Link>Numeric.cs</Link>
+    <Compile Include="..\Leleko.CSharp.Numeric\NumericParser.cs">
+      <Link>NumericParser.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

@@ -13,6 +13,7 @@ namespace Leleko.CSharp
 	/// <returns>success or not</returns>©©©©
 	public delegate bool ParseFunc<TOutput>(string s,ref int index,out TOutput value);
 	
+
 	/// <summary>
 	/// parse provider for numbers types
 	/// </summary>
@@ -264,7 +265,7 @@ namespace Leleko.CSharp
 		}
 		
 		/// <summary>
-		/// extract {int} variable from string with index
+		/// extract {long} variable from string with index
 		/// </summary>
 		/// <param name="s">expression</param>
 		/// <param name="index">start index</param>
@@ -328,7 +329,7 @@ namespace Leleko.CSharp
 			return false;
 		}
 		/// <summary>
-		/// convert string to {int} variable
+		/// convert string to {long} variable
 		/// </summary>
 		/// <param name="s">expression</param>
 		/// <param name="value">result</param>
@@ -635,6 +636,89 @@ namespace Leleko.CSharp
 			}
 			return false;
 		}
+
+		/// <summary>
+		/// convert string to {TimeSpan} variable
+		/// </summary>
+		/// <param name="s">expression in standart format {dd.hh:mm:ss.ffff}</param>
+		/// <param name="index">start index</param>
+		/// <param name="value">result</param>
+		/// <returns>success or not</returns>
+		static public bool TryParse(string s, ref int index, out TimeSpan value)
+		{
+			long ticks;
+			int i = index, length = s.Length;
+			if (TryParse(s, ref i, out ticks))
+			{
+				if (i < length)
+				{
+					long subticks;
+					if (s[i] == '.')
+					{
+						ticks *= TimeSpan.TicksPerDay;	// дни
+						i++;
+						if (TryParse(s, ref i, out subticks))
+							checked { ticks += subticks * TimeSpan.TicksPerHour; }
+						else
+							goto to_fail;
+					}
+					else if (s[i] == ':')
+						checked { ticks *= TimeSpan.TicksPerHour; } // часы
+					else
+						goto to_success; // считаем что число - количество тиков
+
+
+					if 	(i<length && s[i++] == ':' && TryParse(s, ref i, out subticks))
+					{
+						checked { ticks += subticks * TimeSpan.TicksPerMinute; }
+						if (i<length && s[i++] == ':' && TryParse(s, ref i, out subticks))
+						{
+							checked { ticks += subticks * TimeSpan.TicksPerSecond; }
+							if (i<length && s[i] == '.')
+							{
+								i++;
+								if (TryParse(s, ref i, out subticks))
+									checked { ticks += subticks * TimeSpan.TicksPerMillisecond; }
+								else
+									i--;
+							}
+							goto to_success;
+						}
+					}
+					goto to_fail;
+				}
+			to_success:
+				value = new TimeSpan(ticks);
+				index = i;
+				return true;
+			}
+		to_fail:
+			value = default(TimeSpan);
+			return false;
+		}
+		/// <summary>
+		/// convert string to {TimeSpan} variable
+		/// 
+		/// </summary>
+		/// <param name="s">expression in standart format {dd.hh:mm:ss.ffff}</param>
+		/// <param name="value">result</param>
+		/// <returns>success or not</returns>
+		static public bool TryParse(string s, out TimeSpan value)
+		{
+			int i = 0;
+			if (TryParse(s, ref i, out value))
+			{
+				for(;i < s.Length;i++)
+				{
+					char c = s[i];
+					if (c != ' ' && c != '\t' && c != '\n' && c != '\r')
+						return false;
+				}
+				return true;
+			}
+			return false;
+		}
+
 	}
 
 	/// <summary>
